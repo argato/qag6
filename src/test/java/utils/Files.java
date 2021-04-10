@@ -16,8 +16,8 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 public class Files {
 
-  public static PDF getPdf(String path) throws IOException {
-    return new PDF(downloadFile(path));
+  public static PDF getPdf(String path, boolean isLocal) throws IOException {
+    return isLocal ? new PDF(downLoadLocalFile(path)) : new PDF(downloadFile(path));
   }
 
   public static XLS getXls(String path) throws IOException {
@@ -28,6 +28,10 @@ public class Files {
     Configuration.downloadsFolder = "downloads";
     open(path);
     return $("#raw-url").download();
+  }
+
+  public static File downLoadLocalFile(String path) {
+    return new File(path);
   }
 
   public static String getDocx(String path) throws IOException {
@@ -47,5 +51,4 @@ public class Files {
     fis.close();
     return extractor.getText();
   }
-
 }

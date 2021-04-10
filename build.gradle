@@ -12,12 +12,13 @@ def selenideVersion = "5.20.1",
 dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
-            "com.codeborne:pdf-test:1.5.1",
+            "com.codeborne:pdf-test:1.6.1",
             "com.codeborne:xls-test:1.4.3",
             "org.hamcrest:hamcrest-all:1.3",
             "org.apache.poi:poi-scratchpad:5.0.0",
             "org.apache.poi:poi-ooxml:5.0.0",
             "org.apache.poi:poi:5.0.0",
+            "net.lingala.zip4j:zip4j:2.7.0",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "net.lingala.zip4j:zip4j:1.3.2")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"

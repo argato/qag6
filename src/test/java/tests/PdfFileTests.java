@@ -14,7 +14,7 @@ public class PdfFileTests {
     String pdfFilePath = "https://github.com/argato/qag6/blob/master/src/test/resources/report.pdf";
     String expectedData = "ОТЧЕТ ПО ИНЦИДЕНТУ № 20-11-26";
 
-    PDF pdf = getPdf(pdfFilePath);
+    PDF pdf = getPdf(pdfFilePath, false);
     assertThat(pdf, PDF.containsText(expectedData));
   }
 }
